@@ -11,6 +11,10 @@ lat = st.sidebar.number_input("Latitude", value=-1.28)
 lon = st.sidebar.number_input("Longitude", value=36.82)
 date_range = st.sidebar.date_input("Select Audit Period", [])
 
+# --- SIDEBAR CALIBRATION ---
+st.sidebar.subheader("Panel Calibration")
+panel_efficiency = st.sidebar.slider("Panel Efficiency (%)", 10, 25, 18) / 100
+
 # --- MAIN INTERFACE ---
 st.title("☀️ PeerCarbon Digital MRV")
 st.info("Satellite-Verified Carbon Credit Issuance")
@@ -62,4 +66,5 @@ if st.sidebar.button("Run Audit"):
 else:
     # This shows before the user clicks the button
     st.write("### 👈 Set your parameters and click 'Run Audit' in the sidebar.")
+
     st.image("https://img.icons8.com/clouds/200/null/satellite.png")
